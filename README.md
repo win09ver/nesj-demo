@@ -73,6 +73,9 @@ nest g controller <module name> --no-spec
 #create a service for modele
 nest g service <module name> --no-spec
 
+#config
+yarn add @nestjs/config
+
 #validation
 yarn add class-validator class-transformer
 

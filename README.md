@@ -86,7 +86,7 @@ yarn add mysql
 yarn add bcrypt
 
 #jwt & passport
-yarn add @nestjs/jwt @nestjs/passport @types/passport-jwt passport passport-jwt 
+yarn add @nestjs/jwt @nestjs/passport @types/passport-jwt passport passport-jwt   
 ```javascript
 imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),

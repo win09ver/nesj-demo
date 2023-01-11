@@ -9,6 +9,7 @@ import { TypeOrmConfigService } from './type-orm-config.service';
   imports: [
     ConfigModule.forRoot({
       envFilePath: [`.env.stage.${process.env.STAGE}`],
+      isGlobal: true,
     }),
     AuthModule,
     TasksModule,

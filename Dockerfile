@@ -1,4 +1,5 @@
 FROM node:16.19-alpine As development
+
 WORKDIR /app
 COPY ./package.json ./yarn.lock ./
 
@@ -9,6 +10,8 @@ RUN yarn install --no-progress
 RUN yarn build
 
 FROM node:16.19-alpine As runtime
+ENV STAGE=dev
+
 WORKDIR /app
 COPY ./package.json ./yarn.lock ./
 COPY --from=builder /work/node_modules ./node_modules
@@ -20,4 +23,4 @@ ENTRYPOINT ["/sbin/tini", "--"]
 USER node
 EXPOSE 13000
 
-CMD ["node", "dist/main"]
+CMD ["node", "dist/main.js"]

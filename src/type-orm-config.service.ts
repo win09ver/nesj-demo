@@ -9,11 +9,11 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
     const configService = new ConfigService(); // ポイント
     return {
       type: configService.get('DB_TYPE'),
-      host: configService.get('DB_HOST', 'localhost'),
-      port: Number(configService.get('DB_PORT', 5432)),
-      username: configService.get('DB_USERNAME', 'postgres'),
-      password: configService.get('DB_PASSWORD', 'postgres'),
-      database: configService.get('DB_DATABASE', 'postgres'),
+      host: configService.get('DB_HOST'),
+      port: Number(configService.get('DB_PORT')),
+      username: configService.get('DB_USERNAME'),
+      password: configService.get('DB_PASSWORD'),
+      database: configService.get('DB_DATABASE'),
       entities: [join(__dirname + '../**/*.entity{.ts,.js}')],
       synchronize: false,
     } as TypeOrmModuleOptions;

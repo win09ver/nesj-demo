@@ -3,6 +3,10 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { TransformInterceptor } from './transform.interceptor';
 
+console.log(process.env.STAGE);
+console.log(process.env.DB_TYPE);
+console.log(process.env.DB_HOST);
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(
